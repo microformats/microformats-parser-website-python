@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mf2py and utilities</title>
+    <style>
+      body {
+      font-family: sans;
+      background: #ddd;
+      }
+      .container {
+      width: 100%;
+      max-width: 640px;
+      margin: 1em auto;
+      background: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 1em;
+      }
+      .container + .container {
+      margin-top: 1em;
+      }
+      h1 {
+      1.5em;
+      margin: 5px;
+      }
+      label {
+      font-weight: bold;
+      margin: 10px 0 0 0;
+      display: block;
+      }
+      button {
+      margin: 10px 0 0 0;
+      }
+      textarea, input[type="url"] {
+      display: block;
+      width: 90%;
+      }
+      select {
+      display: block;
+      }
+      textarea {
+      height: 5em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>mf2 from a url</h1>
+
+      Using mf2py version {{ mf2py_version }}
+
+      <form action="/" method="GET">
+        <label>URL</label>
+        <input type="url" name="url" placeholder="http://..." />
+        <label>Parser</label>
+        <select name="parser">
+          <option>html5lib</option>
+          <option>lxml</option>
+          <option>html.parser</option>
+        </select>
+        <label title="mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result">
+          <input type="checkbox" name="util" value="true"> Process with mf2util
+        </label>
+        <button type="submit">Convert</button>
+      </form>
+    </div>
+
+    <div class="container">
+      <h1>mf2 from a document</h1>
+      <form action="/" method="POST">
+        <label>HTML</label>
+        <textarea name="doc"></textarea>
+        <label>Base URL</label>
+        <input type="url" name="url" placeholder="http://..." />
+        <label>Parser</label>
+        <select name="parser">
+          <option>html5lib</option>
+          <option>lxml</option>
+          <option>html.parser</option>
+        </select>
+        <button type="submit">Convert</button>
+      </form>
+    </div>
+
+
+
+  </body>
+</html>
