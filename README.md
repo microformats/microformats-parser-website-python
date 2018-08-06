@@ -8,14 +8,6 @@ https://python.microformats.io
 
 All commits to the `master` branch get auto-deployed to the live website (running on [Heroku](https://python.microformats.io))
 
-## Development Status
-
-Implemented:
-
-- Parse a website from a pasted URL
-- Parse a blob of `HTML` with optional `Base URL`
-- Optionally, save `HTML` blob, creating a permalink (a la Gist)
-- Optionally, display rendered `HTML` blob on the page
 
 ## Requirements
 
