@@ -8,43 +8,39 @@ https://python.microformats.io
 
 All commits to the `master` branch get auto-deployed to the live website (running on [Heroku](https://python.microformats.io))
 
+## Getting Started
 
-## Requirements
+This website is built using Python Flask.
 
-- Python 2.7
-
-
-## Installation
-
-Clone the repo:
+To start working with this project, first clone the repository for this project:
 
 ```
 git clone https://github.com/indieweb/microformats-python-parser-website.git
 cd microformats-python-parser-website
 ```
 
-Install the dependencies:
+Next, install the required dependencies:
 
 ```
-TODO
+pip3 install -r requirements.txt
 ```
 
-Start the server:
+Next, start the server. You can do this in either debugging mode (where `debug=True`) in Flask or in production mode using Gunicorn.
 
 ```
-TODO
+python3 app.py --debug (debug mode)
+gunicorn app:app (production mode)
 ```
 
-Open the site in your browser:
+You can view your running local application at this URL:
 
 ```
-TODO
+http://localhost:8080
 ```
 
+## Requirements
 
-## Authors
-
-- Kyle Mahan / [@kylewm](https://github.com/kylewm)
+- Python 3.9
 
 ## Contributions
 
@@ -58,9 +54,13 @@ TODO
 If you find bugs, have feature requests or questions, please
 [file an issue](https://github.com/indieweb/microformats-parser-website-python/issues).
 
-
 ## License
 
 Microformats Python Parser Website is dedicated to the public domain using Creative Commons -- CC0 1.0 Universal.
 
 http://creativecommons.org/publicdomain/zero/1.0
+
+## Contributors
+
+- Kyle Mahan / [@kylewm](https://github.com/kylewm) (Author)
+- [@capjamesg](https://github.com/capjamesg) (Contributor)
