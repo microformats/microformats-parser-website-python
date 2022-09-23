@@ -9,7 +9,7 @@ from flask import Flask, render_template, jsonify, request, make_response
 
 app = Flask(__name__)
 
-mf2py.Parser.user_agent = 'mf2.kylewm.com (mf2py v' + mf2py.__version__ + ')'
+mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ + ") Mozilla/5.0 Chrome/29.0.1547.57 Safari/537.36"
 mf2py.Parser.dict_class = collections.OrderedDict
 
 @app.route('/', methods=['GET', 'POST'])
