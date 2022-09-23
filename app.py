@@ -21,7 +21,7 @@ parser.add_option(
 
 app = Flask(__name__)
 
-mf2py.Parser.user_agent = "mf2.kylewm.com (mf2py v" + mf2py.__version__ + ")"
+mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ + ") Mozilla/5.0 Chrome/29.0.1547.57 Safari/537.36"
 mf2py.Parser.dict_class = OrderedDict
 mf2py.Parser.img_with_alt = True
 
@@ -72,4 +72,4 @@ def index():
 
 
 if options.debug:
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
