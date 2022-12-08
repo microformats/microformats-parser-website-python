@@ -9,7 +9,7 @@ idna==3.4
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.1
-mf2py==1.1.0
+mf2py==1.1.2
 mf2util==0.5.1
 requests==2.28.1
 six==1.16.0
