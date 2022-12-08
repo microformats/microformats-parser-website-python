@@ -25,7 +25,6 @@ mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ +
 mf2py.Parser.dict_class = OrderedDict
 mf2py.Parser.img_with_alt = True
 
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     try:
