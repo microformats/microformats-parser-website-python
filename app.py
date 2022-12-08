@@ -23,7 +23,6 @@ app = Flask(__name__)
 
 mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ + ") Mozilla/5.0 Chrome/29.0.1547.57 Safari/537.36"
 mf2py.Parser.dict_class = OrderedDict
-mf2py.Parser.img_with_alt = True
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -39,13 +38,13 @@ def index():
         def fetch_mf2(url):
             if url in cached_mf2:
                 return cached_mf2[url]
-            p = mf2py.parse(url=url, html_parser=parser or None)
+            p = mf2py.parse(url=url, html_parser=parser or None, img_with_alt = True)
             cached_mf2[url] = p
             return p
 
         if url or doc:
             p = mf2py.parse(
-                url=url or None, doc=doc or None, html_parser=parser or None
+                url=url or None, doc=doc or None, html_parser=parser or None, img_with_alt = True
             )
             if util:
                 if any("h-feed" in item["type"] for item in p["items"]):
