@@ -21,7 +21,7 @@ parser.add_option(
     "-p",
     "--port",
     action="store",
-    type="string",
+    type="int",
     dest="port_number",
     default="8080",
     help="Change dev server port (default is 8080)",
