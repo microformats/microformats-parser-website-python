@@ -17,6 +17,16 @@ parser.add_option(
     help="Run application in debug mode",
 )
 
+parser.add_option(
+    "-p",
+    "--port",
+    action="store",
+    type="int",
+    dest="port",
+    default="8080",
+    help="Change dev server port (default is 8080)",
+)
+
 (options, args) = parser.parse_args()
 
 app = Flask(__name__)
@@ -70,4 +80,4 @@ def index():
 
 
 if options.debug:
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=options.port)
