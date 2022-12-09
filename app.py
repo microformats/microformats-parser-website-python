@@ -22,7 +22,7 @@ parser.add_option(
     "--port",
     action="store",
     type="int",
-    dest="port_number",
+    dest="port",
     default="8080",
     help="Change dev server port (default is 8080)",
 )
@@ -80,4 +80,4 @@ def index():
 
 
 if options.debug:
-    app.run(debug=True, port=options.port_number)
+    app.run(debug=True, port=options.port)
