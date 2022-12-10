@@ -61,26 +61,26 @@
     <section>
 
       <form action="/" accept-charset="UTF-8" method="get">
-        <div class="form-group">
+        <p class="form-group">
           <label for="url">Enter a URL</label>
           <input required id="url" class="form-control form-control-lg" type="url" name="url" placeholder="https://example.com/person.html" />
-        </div>
+        </p>
 
-        <div class="form-group">
+        <p class="form-group">
           <label for="parser">Parser</label>
           <select id="parser" name="parser">
             <option>html5lib</option>
             <option>lxml</option>
             <option>html.parser</option>
           </select>
-        </div>
+        </p>
 
-        <div class="form-check">
+        <p class="form-check">
           <label title="mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result" class="form-check-label" for="util">
             <input id="util" name="util" class="form-check-input" type="checkbox" value="true">
             Process with mf2util
           </label>
-        </div>
+        </p>
 
         <button type="submit" class="btn btn-lg btn-success">Parse</button>
       </form>
@@ -92,24 +92,24 @@
       <h2 class="h4 my-5">OR parse just a snippet of HTML</h2>
 
       <form method="post" action="/" class="mb-5">
-        <div class="form-group">
+        <p class="form-group">
           <label for="doc">HTML</label>
           <textarea required id="doc" name="doc" rows="6" class="form-control form-control-lg"></textarea>
-        </div>
+        </p>
 
-        <div class="form-group">
+        <p class="form-group">
           <label for="url">Base URL</label>
           <input id="url" name="url" type="url" class="form-control form-control-lg" />
-        </div>
+        </p>
 
-        <div class="form-group">
+        <p class="form-group">
           <label for="parser">Parser</label>
           <select id="parser" name="parser">
             <option>html5lib</option>
             <option>lxml</option>
             <option>html.parser</option>
           </select>
-        </div>
+        </p>
 
         <button type="submit" class="btn btn-lg btn-success">Parse</button>
       </form>
