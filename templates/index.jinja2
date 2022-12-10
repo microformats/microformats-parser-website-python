@@ -6,28 +6,61 @@
 
   <title>Python Microformats Parser</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <style>
+
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    @media screen and (min-width: 35em) {
+      body {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    }
+
+    h1,
+    h2 {
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
 
     section {
       border-bottom: 1px solid #ccc;
+      padding-bottom: 2em;
     }
 
-    section:first-child {
-      padding-bottom: 2em;
+    form > p {
+      margin-bottom: 1.5em;
     }
 
     form label {
       font-weight: bold;
       display: block;
+      margin-bottom: 0.5em;
     }
 
     form textarea,
     form input[type=url] {
+      box-sizing: border-box;
       font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.25rem;
+    	padding: 0.75rem 1.5rem;
+      width: 100%;
     }
 
-    form .form-control:disabled {
+    button {
+	    color: rgb(255, 255, 255);
+	    background-color: rgb(92, 184, 92);
+      font-size: 1.25rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.3rem;
+    }
+
+    form :disabled {
       cursor: default;
       background: #efefef;
       color: black;
@@ -42,31 +75,25 @@
       font-size: 0.7em;
     }
 
-    /* disable bootstrap animations */
-    .form-control, .btn {
-      transition: none;
-    }
   </style>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-  <h1 class="container mt-5 mb-3">
-    Microformats Parser (Python) {{ mf2py_version }}
-  </h1>
+  <h1>Microformats Parser (Python) {{ mf2py_version }}</h1>
 
-  <main id="mf2" class="container">
+  <main>
 
     <section>
 
       <form action="/" accept-charset="UTF-8" method="get">
-        <p class="form-group">
+        <p>
           <label for="url">Enter a URL</label>
-          <input required id="url" class="form-control form-control-lg" type="url" name="url" placeholder="https://example.com/person.html" />
+          <input required id="url" type="url" name="url" placeholder="https://example.com/person.html">
         </p>
 
-        <p class="form-group">
+        <p>
           <label for="parser">Parser</label>
           <select id="parser" name="parser">
             <option>html5lib</option>
@@ -75,34 +102,34 @@
           </select>
         </p>
 
-        <p class="form-check">
-          <label title="mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result" class="form-check-label" for="util">
+        <p>
+          <label title="mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result" for="util">
             <input id="util" name="util" class="form-check-input" type="checkbox" value="true">
             Process with mf2util
           </label>
         </p>
 
-        <button type="submit" class="btn btn-lg btn-success">Parse</button>
+        <button type="submit">Parse</button>
       </form>
 
     </section>
 
     <section>
 
-      <h2 class="h4 my-5">OR parse just a snippet of HTML</h2>
+      <h2>OR parse just a snippet of HTML</h2>
 
-      <form method="post" action="/" class="mb-5">
-        <p class="form-group">
+      <form method="post" action="/">
+        <p>
           <label for="doc">HTML</label>
-          <textarea required id="doc" name="doc" rows="6" class="form-control form-control-lg"></textarea>
+          <textarea required id="doc" name="doc" rows="6"></textarea>
         </p>
 
-        <p class="form-group">
+        <p>
           <label for="url">Base URL</label>
-          <input id="url" name="url" type="url" class="form-control form-control-lg" />
+          <input id="url" name="url" type="url">
         </p>
 
-        <p class="form-group">
+        <p>
           <label for="parser">Parser</label>
           <select id="parser" name="parser">
             <option>html5lib</option>
@@ -111,14 +138,14 @@
           </select>
         </p>
 
-        <button type="submit" class="btn btn-lg btn-success">Parse</button>
+        <button type="submit">Parse</button>
       </form>
 
     </section>
 
   </main>
 
-  <footer class="container my-5">
+  <footer>
     <ul>
       <li><a href="https://microformats.io">About Microformats</a></li>
       <li><a href="https://github.com/microformats/microformats-parser-website-python">Source code for this site</a></li>
