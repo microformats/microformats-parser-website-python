@@ -38,13 +38,13 @@ def index():
         def fetch_mf2(url):
             if url in cached_mf2:
                 return cached_mf2[url]
-            p = mf2py.parse(url=url, html_parser=parser or None, img_with_alt = True)
+            p = mf2py.parse(url=url, html_parser=parser or None)
             cached_mf2[url] = p
             return p
 
         if url or doc:
             p = mf2py.parse(
-                url=url or None, doc=doc or None, html_parser=parser or None, img_with_alt = True
+                url=url or None, doc=doc or None, html_parser=parser or None
             )
             if util:
                 if any("h-feed" in item["type"] for item in p["items"]):
