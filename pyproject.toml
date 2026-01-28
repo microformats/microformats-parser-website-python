@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "A web interface for parsing microformats using mf2py"
 readme = "README.md"
 license = "CC0-1.0"
-requires-python = "==3.9.14"
+requires-python = "==3.14.2"
 dependencies = [
     "flask==2.2.2",
     "gunicorn==20.1.0",
