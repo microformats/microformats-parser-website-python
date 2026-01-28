@@ -1,23 +1,10 @@
 import json
 import traceback
 from collections import OrderedDict
-from optparse import OptionParser
 
 import mf2py
 import mf2util
 from flask import Flask, jsonify, make_response, render_template, request
-
-parser = OptionParser()
-
-parser.add_option(
-    "-d",
-    "--debug",
-    action="store_true",
-    default=False,
-    help="Run application in debug mode",
-)
-
-(options, args) = parser.parse_args()
 
 app = Flask(__name__)
 
@@ -68,6 +55,18 @@ def index():
         traceback.print_exc()
         return jsonify(error="%s: %s" % (type(e).__name__, e)), 400
 
+if __name__ == "__main__":
+    from optparse import OptionParser
 
-if options.debug:
-    app.run(debug=True, port=8080)
+    parser = OptionParser()
+    parser.add_option(
+        "-d",
+        "--debug",
+        action="store_true",
+        default=False,
+        help="Run application in debug mode",
+    )
+    (options, args) = parser.parse_args()
+
+    if options.debug:
+        app.run(debug=True, port=8080)

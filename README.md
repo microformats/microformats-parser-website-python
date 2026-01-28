@@ -29,7 +29,7 @@ Next, start the server. You can do this in either debugging mode (where `debug=T
 
 ```
 python3 app.py --debug (debug mode)
-gunicorn app:app (production mode)
+gunicorn --bind localhost:8080 app:app (production mode)
 ```
 
 You can view your running local application at this URL:
