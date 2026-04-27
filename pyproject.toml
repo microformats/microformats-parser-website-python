@@ -10,5 +10,5 @@ dependencies = [
     "gunicorn==25.3.0",
     "lxml==6.1.0",
     "mf2py==2.0.1",
-    "mf2util==0.5.2",
+    "mf2util @ git+https://github.com/Zegnat/microformats-mf2util.git@fix-deprecations",
 ]
