@@ -22,14 +22,14 @@ cd microformats-python-parser-website
 Next, install the required dependencies:
 
 ```
-pip3 install -r requirements.txt
+uv sync
 ```
 
 Next, start the server. You can do this in either debugging mode (where `debug=True`) in Flask or in production mode using Gunicorn.
 
 ```
-python3 app.py --debug (debug mode)
-gunicorn app:app (production mode)
+uv run -- app.py --debug (debug mode)
+uv run -- gunicorn --bind localhost:8080 app:app (production mode)
 ```
 
 You can view your running local application at this URL:
