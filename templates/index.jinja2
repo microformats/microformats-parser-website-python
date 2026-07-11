@@ -38,10 +38,11 @@
           </div>
 
           <div class="form-check mb-3">
-            <input id="util" name="util" class="form-check-input" type="checkbox" value="true">
-            <label title="mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result" class="form-check-label fw-bold" for="util">
+            <input id="util" name="util" class="form-check-input" type="checkbox" value="true" aria-describedby="util-help">
+            <label class="form-check-label fw-bold" for="util">
               Process with mf2util
             </label>
+            <div id="util-help" class="form-text">mf2util interprets certain post types (currently h-entry and h-event) and returns a normalized result.</div>
           </div>
 
           <button type="submit" class="btn btn-lg btn-success">Parse</button>
