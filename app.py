@@ -66,7 +66,16 @@ if __name__ == "__main__":
         default=False,
         help="Run application in debug mode",
     )
+    parser.add_option(
+        "-p",
+        "--port",
+        action="store",
+        type="int",
+        dest="port",
+        default=8080,
+        help="Change dev server port (default is 8080)",
+    )
     (options, args) = parser.parse_args()
 
     if options.debug:
-        app.run(debug=True, port=8080)
+        app.run(debug=True, port=options.port)
