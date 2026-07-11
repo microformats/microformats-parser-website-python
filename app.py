@@ -1,4 +1,5 @@
 import json
+import os
 import traceback
 from collections import OrderedDict
 
@@ -7,6 +8,8 @@ import mf2util
 from flask import Flask, jsonify, make_response, render_template, request
 
 app = Flask(__name__)
+
+COMMIT = os.environ.get("HEROKU_BUILD_COMMIT", "")
 
 mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ + ") Mozilla/5.0 Chrome/29.0.1547.57 Safari/537.36"
 mf2py.Parser.dict_class = OrderedDict
@@ -50,7 +53,11 @@ def index():
                 response.headers["Content-Type"] = "application/json"
             return response
 
-        return render_template("index.jinja2", mf2py_version=mf2py.__version__)
+        return render_template(
+            "index.jinja2",
+            mf2py_version=mf2py.__version__,
+            commit=COMMIT,
+        )
     except BaseException as e:
         traceback.print_exc()
         return jsonify(error="%s: %s" % (type(e).__name__, e)), 400
