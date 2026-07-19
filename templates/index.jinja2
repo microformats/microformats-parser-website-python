@@ -12,10 +12,7 @@
 
 <body>
   <div class="container">
-    <h1 class="mt-5 mb-3">
-      Microformats Parser (Python)
-      {{ mf2py_version }}
-    </h1>
+    <h1 class="mt-5 mb-3">Microformats Parser (Python)</h1>
 
     <main>
 
@@ -93,8 +90,14 @@
     <footer class="my-5">
       <ul>
         <li><a href="https://microformats.io">About Microformats</a></li>
-        <li><a href="https://github.com/microformats/microformats-parser-website-python">Source code for this site</a></li>
-        <li><a href="https://github.com/microformats/mf2py">Source code for the Microformats mf2py Parser</a></li>
+        <li>
+          <a href="https://github.com/microformats/microformats-parser-website-python">Source code for this site</a>
+          <span class="badge text-bg-light">v{{ site_version }}</span>
+        </li>
+        <li>
+          <a href="https://github.com/microformats/mf2py">Source code for the Microformats mf2py Parser</a>
+          <span class="badge text-bg-light">v{{ mf2py_version }}</span>
+        </li>
 
         <li id="parser-list">
           Other Microformats Parser websites:

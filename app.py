@@ -1,6 +1,8 @@
 import json
+import tomllib
 import traceback
 from collections import OrderedDict
+from pathlib import Path
 
 import mf2py
 import mf2util
@@ -10,6 +12,10 @@ app = Flask(__name__)
 
 mf2py.Parser.user_agent = "python.microformats.io (mf2py/" + mf2py.__version__ + ") Mozilla/5.0 Chrome/29.0.1547.57 Safari/537.36"
 mf2py.Parser.dict_class = OrderedDict
+
+SITE_VERSION = tomllib.loads(
+    (Path(__file__).parent / "pyproject.toml").read_text(encoding="utf-8")
+)["project"]["version"]
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -50,7 +56,11 @@ def index():
                 response.headers["Content-Type"] = "application/json"
             return response
 
-        return render_template("index.jinja2", mf2py_version=mf2py.__version__)
+        return render_template(
+            "index.jinja2",
+            site_version=SITE_VERSION,
+            mf2py_version=mf2py.__version__,
+        )
     except BaseException as e:
         traceback.print_exc()
         return jsonify(error="%s: %s" % (type(e).__name__, e)), 400
