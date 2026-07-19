@@ -88,7 +88,7 @@
         <li><a href="https://github.com/microformats/microformats-parser-website-python">Source code for this site</a></li>
         <li><a href="https://github.com/microformats/mf2py">Source code for the Microformats mf2py Parser</a></li>
 
-        <li>
+        <li id="parser-list">
           Other Microformats Parser websites:
           <a href="https://go.microformats.io">Go</a>,
           <a href="https://node.microformats.io">Node</a>,
@@ -99,6 +99,17 @@
         <li><a href="https://microformats.org/wiki/microformats2#Parsers">More Microformats parsers</a></li>
       </ul>
     </footer>
+
+    <script type="module">
+      const nodeList = document.getElementById("parser-list").querySelectorAll("a");
+      const values = Array
+        .from(nodeList, (node) => [Math.random(), node.href, node.innerText])
+        .toSorted(([v1], [v2]) => v2 - v1);
+      nodeList.forEach((node, ix) => {
+        node.href = values[ix][1];
+        node.innerText = values[ix][2];
+      });
+    </script>
   </div>
 </body>
 </html>
