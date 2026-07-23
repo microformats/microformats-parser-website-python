@@ -6,7 +6,7 @@ https://python.microformats.io
 
 ## Deployment
 
-All commits to the `master` branch get auto-deployed to the live website (running on [Heroku](https://python.microformats.io))
+All commits to the `main` branch get auto-deployed to the live website (running on [Heroku](https://python.microformats.io))
 
 ## Getting Started
 
@@ -15,8 +15,8 @@ This website is built using Python Flask.
 To start working with this project, first clone the repository for this project:
 
 ```
-git clone https://github.com/indieweb/microformats-python-parser-website.git
-cd microformats-python-parser-website
+git clone https://github.com/microformats/microformats-parser-website-python.git
+cd microformats-parser-website-python
 ```
 
 Next, install the required dependencies:
@@ -32,6 +32,8 @@ uv run -- app.py --debug (debug mode)
 uv run -- gunicorn --bind localhost:8080 app:app (production mode)
 ```
 
+In debug mode the port defaults to 8080; use `-p`/`--port` to change it.
+
 You can view your running local application at this URL:
 
 ```
@@ -40,19 +42,20 @@ http://localhost:8080
 
 ## Requirements
 
-- Python 3.9
+- Python 3.14.5
+- [uv](https://docs.astral.sh/uv/)
 
 ## Contributions
 
 1. Fork it
-2. Get it running (see Installation above)
+2. Get it running (see Getting Started above)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request
 
 If you find bugs, have feature requests or questions, please
-[file an issue](https://github.com/indieweb/microformats-parser-website-python/issues).
+[file an issue](https://github.com/microformats/microformats-parser-website-python/issues).
 
 ## License
 
@@ -64,3 +67,4 @@ http://creativecommons.org/publicdomain/zero/1.0
 
 - Kyle Mahan / [@kylewm](https://github.com/kylewm) (Author)
 - [@capjamesg](https://github.com/capjamesg) (Contributor)
+- Martijn van der Ven / [@Zegnat](https://github.com/Zegnat) (Contributor)

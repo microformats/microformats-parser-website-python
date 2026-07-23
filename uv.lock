@@ -262,7 +262,7 @@ source = { git = "https://github.com/Zegnat/microformats-mf2util.git?rev=fix-dep
 
 [[package]]
 name = "microformats-parser-website"
-version = "1.0.0"
+version = "1.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "flask" },

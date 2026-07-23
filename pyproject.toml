@@ -1,6 +1,6 @@
 [project]
 name = "microformats-parser-website"
-version = "1.0.0"
+version = "1.1.0"
 description = "A web interface for parsing microformats using mf2py"
 readme = "README.md"
 license = "CC0-1.0"
