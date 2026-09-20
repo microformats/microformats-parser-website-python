@@ -42,7 +42,7 @@ http://localhost:8080
 
 ## Requirements
 
-- Python 3.14.5
+- Python 3.14.7
 - [uv](https://docs.astral.sh/uv/)
 
 ## Contributions
