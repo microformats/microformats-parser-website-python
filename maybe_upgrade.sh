@@ -21,6 +21,7 @@ CURRENT_PYTHON=$(cat .python-version 2>/dev/null)
 if [ "$LATEST_PYTHON" != "$CURRENT_PYTHON" ]; then
     uv python install "$LATEST_PYTHON"
     sed -i "" "s/requires-python = \"==[0-9.]*\"/requires-python = \"==$LATEST_PYTHON\"/" pyproject.toml
+    sed -i "" "s/^- Python [0-9.]*$/- Python $LATEST_PYTHON/" README.md
     uv python pin "$LATEST_PYTHON"
     rm -f uv.lock
     uv lock
